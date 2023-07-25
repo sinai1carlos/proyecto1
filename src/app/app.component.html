@@ -1,0 +1,105 @@
+<button (click)="getPosts()">Recuperar posts</button>
+<button (click)="createPost()">Crear post</button>
+<button (click)="deletePost()">Eliminar post</button>
+
+
+<button (click)="getAllPosts()">Recuperar todos los posts</button>
+
+<button (click)="createPostWithAngular()">Crear post con angular</button>
+
+<button (click)="updatePostWithAngular()">Actualizar post con angular</button>
+
+<div class="container">
+  <div style="margin-top: 10px;">
+    <input type="text" [(ngModel)]="nombre" placeholder="digite el nombre aqui..">
+  </div>
+  <div style="margin-top: 10px;">
+    <input type="text" [(ngModel)]="apellido" placeholder="digite el apellido aqui..">
+  </div>
+  <div style="margin-top: 10px;">
+    <input type="number" [(ngModel)]="presupuesto">
+  </div>
+  <div style="margin-top: 10px;">
+    <b> Presupuesto actual: ${{mostrarDato()}}</b>
+  </div>
+  <div>
+    <input type="number" *ngIf="presupuesto>0" [(ngModel)]="recarga" placeholder="digite la recarga aqui..">
+    <button style="margin-top: 10px;" (click)="recargar()">Recargar</button>
+  </div>
+  
+</div>
+
+  <div class="caja">
+    <div class="caja-1" >
+      IMAGEN
+    </div>
+    <div class="caja-2">
+      <div class="caja-2-item">
+        Precio: ${{precioProducto}}
+      </div>
+      <div class="caja-2-item">
+        <button *ngIf="presupuesto>0" (click)="comprar()">Comprar</button>
+        <div>
+          <label *ngIf="compraExitosa" >Compra exitosa</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+<div class="caja">
+  <div class="caja-1" >
+    IMAGEN
+  </div>
+  <div class="emociones">
+    <div class="emociones-1">
+      <div>
+        <button (click)="like()">Like</button>
+      </div>
+      <div>
+        {{contador_like}}
+      </div>
+    </div>
+    <div class="emociones-1">
+      <div>
+        <button (click)="love()">Love</button>
+      </div>
+      <div>
+        {{contador_love}}
+      </div>
+    </div>
+    <div class="emociones-1">
+      <div>
+        <button (click)="angry()">Angry</button>
+      </div>
+      <div>
+        {{contador_angry}}
+      </div>
+    </div>
+    <div class="emociones-1">
+      <div>
+        <button (click)="sad()">Sad</button>
+      </div>
+      <div>
+        {{contador_sad}}
+      </div>
+    </div>
+    <div class="emociones-1">
+      <div>
+        Total
+      </div>
+      <div>
+        {{contadorTotal}}
+      </div>
+    </div>
+  </div>
+  <div class="comentar">
+    <button (click)="comentando()">Comentar</button>
+  </div>
+  <div>
+    <textarea *ngIf="comentar" [(ngModel)]="textarea"  name="" id="" cols="20" rows="2" value="gato"></textarea>
+    <button *ngIf="comentar" (click)="enviarComentario()">Enviar comentario</button>
+    {{textarea}}
+  </div>
+</div>
